@@ -69,29 +69,3 @@
 * `a{3,}`	3 or more of a
 * `a{3,6}`	Between 3 and 6 of a  ``"hellllo worllllld!".scan(l{3,6}) => ["llll", "lllll"]``  
                   If there are more than the max, the regex grabs the maximum, leaving behind the remainder of the characters as such:                   `"777777777".scan(7{3-6}) => ["777777", "777"]`
-
-## Open questions:
-
-* does case matter?
-* can we get rid of the plus in scan?
-
-
-__END__
-$ curl -i google.com
-HTTP/1.1 301 Moved Permanently
-Location: http://www.google.com/
-Content-Type: text/html; charset=UTF-8
-Date: Thu, 07 Jan 2016 16:49:09 GMT
-Expires: Sat, 06 Feb 2016 16:49:09 GMT
-Cache-Control: public, max-age=2592000
-Server: gws
-Content-Length: 219
-X-XSS-Protection: 1; mode=block
-X-Frame-Options: SAMEORIGIN
-
-<HTML><HEAD><meta http-equiv="content-type" content="text/html;charset=utf-8">
-<TITLE>301 Moved</TITLE></HEAD><BODY>
-<H1>301 Moved</H1>
-The document has moved
-<A HREF="http://www.google.com/">here</A>.
-</BODY></HTML>
