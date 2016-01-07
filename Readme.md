@@ -38,7 +38,7 @@
 ## Still unknown
 * `[abc]`	A single character of: a, b, or c
 * `[^abc]`	Any single character except: a, b, or c
-* `[a-z]`	all instances of lowercase letters; Brackets are required ``` "abc".scan(/[a-z]/) #=> ["a", "b", "c"] ```
+* `[a-z]`	Any single character in the range a-z
 * `[a-zA-Z]`	Any single character in the range a-z or A-Z
 * `^`	Start of line
 * `$`	End of line
@@ -60,18 +60,15 @@
   "Joshua Mejia [7:58 PM]".scan(/.\W/) => ["a ", "a ", "7:", "8 ", "M]"]
   ```
 * `\b`	Any word boundary
-* `(...)`	Capture an item in the string and then use `.` to represent any place your want around the string
-*                       str = "Joshua"   # => "Joshua"
-                        str[/(....a)/]   # => "oshua"
-                        str[/(J...u.)/]  # => "Joshua"
-                        str[/(.s..)/]    # => "oshu"
+* `(...)`	Capture everything enclosed
 * `(a|b)`	a or b
 * `a?`	Zero or one of a
 * `a*`	Zero or more of a
 * `a+`	One or more of a
 * `a{3}`	Exactly 3 of a
 * `a{3,}`	3 or more of a
-* `a{3,6}`	Between 3 and 6 of a
+* `a{3,6}`	Between 3 and 6 of a  ``"hellllo worllllld!".scan(l{3,6}) => ["llll", "lllll"]``  
+                  If there are more than the max, the regex grabs the maximum, leaving behind the remainder of the characters as such:                   `"777777777".scan(7{3-6}) => ["777777", "777"]`
 
 ## Open questions:
 
