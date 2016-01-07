@@ -33,6 +33,7 @@
   str.scan(/^Regexes/) # => ["Regexes", "Regexes"]
   ```
 * `/^M/` matches its target if target exists at the beginning of a line in a string
+* `a{3,}`	3 or more of 'a' so in 'haaapppy go lucky bunny rabbit' this will select 'aaa', but in 'haaaapppy go lucky bunny rabbit' you will get 'aaaa'. you can change this number to select whatever you want, however if you use 1 as in => a{1,} this will select every combination of 'a' so 'happpy go lucky bunny raaaabbit1' => 'a','aaaa' 
 
 ## Still unknown
 * `[abc]`	A single character of: a, b, or c
