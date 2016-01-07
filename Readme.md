@@ -8,7 +8,8 @@
 * `gsub`
   FIND ME
 * `split`
-  FIND ME
+  Splits string based on the character argumert provided (a.split(/<character(s)>/).
+  Removes the arg character(s) from the string, returns an array of strings
 * `scan`
   Returns an array of matches
 
@@ -18,8 +19,6 @@
 * `/M+/` One or more of its target
 * `/M*/` Zero or more of its target
 * `/./` match any character
-* `/^M/` matches its target if target exists at the beginning of a line in a string
-* 
 
 ## Still unknown
 * `[abc]`	A single character of: a, b, or c
@@ -29,8 +28,7 @@
 * `^`	Start of line
 * `$`	End of line
 * `\A`	Start of string
-* `\z`	Matches targets (".." in example) starting from the end of the string and working backwards from there. 
-*     EXAMPLE: "Joshua Mejia [7:58 PM]"[(/..\z/]) => "M]" vs. "Joshua Mejia [7:58 PM]"[(/...\z/]) => "PM]"
+* `\z`	End of string
 * `\s`	Any whitespace character
 * `\S`	Any non-whitespace character
 * `\d`	Any digit
