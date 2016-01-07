@@ -33,6 +33,10 @@
 * `/PM/` Two characters next to each other
 * `/M+/` One or more of its target
 * `/M*/` Zero or more of its target
+* `/M?/` Zero or one of its target
+```"b ba baa baaa baaaaa".scan(/ba?/) # => ["b", "ba", "ba", "ba", "ba"]```
+vs.
+```"b ba baa baaa baaaaa".scan(/ba*/) # => ["b", "ba", "baa", "baaa", "baaaaa"]```
 * `/./` match any character
 * `/^M/` matches its target if target exists at the beginning of a line in a string
 
