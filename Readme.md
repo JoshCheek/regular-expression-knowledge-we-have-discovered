@@ -2,7 +2,7 @@
 
 ## Methods
 * `=~`
-  Gives the index of the first match
+  Returns the index of the first match
 * `[]`
   return the first match
 * `gsub`
