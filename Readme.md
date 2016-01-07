@@ -2,11 +2,11 @@
 
 ## Methods
 * `=~`
-  Gives the index of the first match
+  Returns the index of the first match
 * `[]`
   return the first match
 * `gsub`
-  Takes a regex expression, and a second argument. Replaces all instances of the target (first argument) with the second argument.
+  FIND ME
 * `split`
   Splits string based on the character argumert provided (a.split(/<character(s)>/).
   Removes the arg character(s) from the string, returns an array of strings
@@ -19,12 +19,6 @@
 * `/M+/` One or more of its target
 * `/M*/` Zero or more of its target
 * `/./` match any character
-* `/^M/` matches its target if target exists at the beginning of a line in a string
-
-  ```ruby
-  str = "Regexes are badass.\nI wonder if strings are jealous?\nRegexes are king."
-  str.scan(/^Regexes/) # => ["Regexes", "Regexes"]
-  ```
 
 ## Still unknown
 * `[abc]`	A single character of: a, b, or c
@@ -37,8 +31,8 @@
 * `\z`	End of string
 * `\s`	Any whitespace character
 * `\S`	Any non-whitespace character
-* `\d`	Any digit
-* `\D`	Any non-digit
+* `\d`	Any digit ```str.scan(/\d/)``` found only the digits 0-9 in the string
+* `\D`	Any non-digit ```str.scan(/\D/)``` found only the nondigits a-z in the string
 * `\w`	Any word character (letter, number, underscore)
 * `\W`	Any non-word character
 * `\b`	Any word boundary
