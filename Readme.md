@@ -2,7 +2,7 @@
 
 ## Methods
 * `=~`
-  FIND ME
+  Gives the index of the first match
 * `[]`
   return the first match
 * `gsub`
