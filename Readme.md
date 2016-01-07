@@ -5,6 +5,14 @@
   Returns the index of the first match
 * `[]` return the first match
 * `gsub` Takes a regex expression, and a second argument. Replaces all instances of the target (first argument) with the second argument.
+
+  ```ruby
+  a = "Hello, its me!"
+  
+  a.gsub(/e/, "pizza") #=> "Hpizzallo, it's mpizza!"
+  a.gsub(/l/, "pizza") #=> "Hepizzapizzao, it's me!"
+  ```
+  
 * `split`
   Splits string based on the character argumert provided (`a.split(/<character(s)>/`).
   Removes the arg character(s) from the string, returns an array of strings
