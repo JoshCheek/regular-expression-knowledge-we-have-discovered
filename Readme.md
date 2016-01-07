@@ -45,7 +45,7 @@
 * `\A`	Start of string
 * `\z`	Matches targets (".." in example) starting from the end of the string and working backwards from there.
 *     EXAMPLE: "Joshua Mejia [7:58 PM]"[(/..\z/]) => "M]" vs. "Joshua Mejia [7:58 PM]"[(/...\z/]) => "PM]"
-* `\s`	Any whitespace character
+* `\s`	Any whitespace character If using scan, will identify the character before or after.  For example, string = "whatup yo". If you enter this: string.scan(/p\s/), you will get ["p "]
 * `\S`	Any non-whitespace character
 * `\d`	Any digit ```str.scan(/\d/)``` found only the digits 0-9 in the string
 * `\D`	Any non-digit ```str.scan(/\D/)``` found only the nondigits a-z in the string
