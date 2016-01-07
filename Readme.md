@@ -6,10 +6,9 @@
 * `[]`
   return the first match
 * `gsub`
-  Takes a regex expression, and a second argument. Replaces all instances of the target (first argument) with the second argument.
+  FIND ME
 * `split`
-  Splits string based on the character argumert provided (a.split(/<character(s)>/).
-  Removes the arg character(s) from the string, returns an array of strings
+  FIND ME
 * `scan`
   Returns an array of matches
 
@@ -25,6 +24,7 @@
   str = "Regexes are badass.\nI wonder if strings are jealous?\nRegexes are king."
   str.scan(/^Regexes/) # => ["Regexes", "Regexes"]
   ```
+* `/^M/` matches its target if target exists at the beginning of a line in a string
 
 ## Still unknown
 * `[abc]`	A single character of: a, b, or c
@@ -34,13 +34,21 @@
 * `^`	Start of line
 * `$`	End of line
 * `\A`	Start of string
-* `\z`	End of string
+* `\z`	Matches targets (".." in example) starting from the end of the string and working backwards from there.
+*     EXAMPLE: "Joshua Mejia [7:58 PM]"[(/..\z/]) => "M]" vs. "Joshua Mejia [7:58 PM]"[(/...\z/]) => "PM]"
 * `\s`	Any whitespace character
 * `\S`	Any non-whitespace character
 * `\d`	Any digit
 * `\D`	Any non-digit
 * `\w`	Any word character (letter, number, underscore)
-* `\W`	Any non-word character
+* `\W`	Any non-word character: Finds spaces, commas, colons, etc - things that wouldn't be part of a word. This does find apostraphe's also, so look out for contractions!
+*     EXAMPLE: ```ruby
+*           "Joshua Mejia [7:58 PM]".scan(/\W/) => [" ", " ", "[", ":", " ", "]"]
+*           ```
+*           ```ruby
+*              "Joshua Mejia [7:58 PM]".scan(/.\W/) => ["a ", "a ", "7:", "8 ", "M]"]
+*              ```
+*
 * `\b`	Any word boundary
 * `(...)`	Capture everything enclosed
 * `(a|b)`	a or b
