@@ -34,7 +34,11 @@
   ```
 * `/^M/` matches its target if target exists at the beginning of a line in a string
 * `a{3,}`	3 or more of 'a' so in 'haaapppy go lucky bunny rabbit' this will select 'aaa', but in 'haaaapppy go lucky bunny rabbit' you will get 'aaaa'. you can change this number to select whatever you want, however if you use 1 as in => a{1,} this will select every combination of 'a' so 'happpy go lucky bunny raaaabbit1' => 'a','aaaa' 
-
+* `\z`	Matches targets (".." in example) starting from the end of the string and working backwards from there.
+*     EXAMPLE: "Joshua Mejia [7:58 PM]"[(/..\z/]) => "M]" vs. "Joshua Mejia [7:58 PM]"[(/...\z/]) => "PM]"
+* `\s`	Any whitespace character If using scan, will identify the character before or after.  For example, string = "whatup yo". If you enter this: string.scan(/p\s/), you will get ["p "]. Does not account for more than one empty space.
+* `\W`	Any non-word character: Finds spaces, commas, colons, etc - things that wouldn't be part of a word. This does find apostraphe's also, so look out for contractions!
+* `(...)`	Capture an item in the string and then use `.` to represent any place your want around the string
 ## Still unknown
 * `[abc]`	A single character of: a, b, or c
 * `[^abc]`	Any single character except: a, b, or c
@@ -43,14 +47,12 @@
 * `^`	Start of line
 * `$`	End of line
 * `\A`	Start of string
-* `\z`	Matches targets (".." in example) starting from the end of the string and working backwards from there.
-*     EXAMPLE: "Joshua Mejia [7:58 PM]"[(/..\z/]) => "M]" vs. "Joshua Mejia [7:58 PM]"[(/...\z/]) => "PM]"
-* `\s`	Any whitespace character If using scan, will identify the character before or after.  For example, string = "whatup yo". If you enter this: string.scan(/p\s/), you will get ["p "]
+
 * `\S`	Any non-whitespace character
 * `\d`	Any digit ```str.scan(/\d/)``` found only the digits 0-9 in the string
 * `\D`	Any non-digit ```str.scan(/\D/)``` found only the nondigits a-z in the string
 * `\w`	Any word character (letter, number, underscore)
-* `\W`	Any non-word character: Finds spaces, commas, colons, etc - things that wouldn't be part of a word. This does find apostraphe's also, so look out for contractions!
+
 
   ```ruby
   "Joshua Mejia [7:58 PM]".scan(/\W/) => [" ", " ", "[", ":", " ", "]"]
@@ -60,7 +62,7 @@
   "Joshua Mejia [7:58 PM]".scan(/.\W/) => ["a ", "a ", "7:", "8 ", "M]"]
   ```
 * `\b`	Any word boundary
-* `(...)`	Capture an item in the string and then use `.` to represent any place your want around the string
+
 
   ```ruby
   str = "Joshua"   # => "Joshua"
