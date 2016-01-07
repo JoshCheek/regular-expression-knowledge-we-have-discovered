@@ -101,6 +101,7 @@
 
 * `[abc]`	A single character of: a, b, or c
 * `[^abc]`	Any single character except: a, b, or c
+`"aabbfbezabeas abrba acaoboalb".scan(/[^ab]/) => ["f", "e", "z", "e", "s", " ", "r", " ", "c", "o", "o", "l"]
 * `[a-z]`	Any single character in the range a-z
 * `[a-zA-Z]`	Any single character in the range a-z or A-Z
 * `^`	Start of line
