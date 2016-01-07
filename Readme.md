@@ -75,31 +75,16 @@
   "Joshua Mejia [7:58 PM]".scan(/.\W/) => ["a ", "a ", "7:", "8 ", "M]"]
   ```
 * `\b`	Any word boundary
-* `(...)`	Capture an item in the string and then use `.` to represent any place your want around the string
-  identifies the last letters of words (as separated by spaces, dashes, or any non-word character(!,?)),
-  as well as the character before the first character of the word. By giving it a target, it
-  returns that letter if it is the last letter of a word, or the character before a word's first character.
+* `()` group items together. Ruby will also "capture" what gets matched
+  and let you access it with `$1`, `$2`, ...
 
   ```ruby
-  "my dog has fleas".scan(/.\b/) => ["y", " ", "g", " ", "s", " ", "s"]
+  "HTTP/1.1 200 OK"[/(\S+) (\S+) (.+)/]  # => "HTTP/1.1 200 OK"
+  $1                                     # => "HTTP/1.1"
+  $2                                     # => "200"
+  $3                                     # => "OK"
   ```
 
-
-```ruby
-"my dog-has-fleas".scan(/.\b/) => ["y", " ", "g", "-", "s", "-", "s"]
-```
-
-
-```ruby
-"my dog-has-fleas".scan(/g\b/) => ["g"]
-```
-
-  ```ruby
-  str = "Joshua"   # => "Joshua"
-  str[/(....a)/]   # => "oshua"
-  str[/(J...u.)/]  # => "Joshua"
-  str[/(.s..)/]    # => "oshu"
-  ```
 * `a{3,6}`	Between 3 and 6 of a
 
   ```ruby
