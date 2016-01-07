@@ -75,6 +75,24 @@
   "Joshua Mejia [7:58 PM]".scan(/.\W/) => ["a ", "a ", "7:", "8 ", "M]"]
   ```
 * `\b`	Any word boundary
+* `(...)`	Capture an item in the string and then use `.` to represent any place your want around the string
+  identifies the last letters of words (as separated by spaces, dashes, or any non-word character(!,?)),
+  as well as the character before the first character of the word. By giving it a target, it
+  returns that letter if it is the last letter of a word, or the character before a word's first character.
+
+  ```ruby
+  "my dog has fleas".scan(/.\b/) => ["y", " ", "g", " ", "s", " ", "s"]
+  ```
+
+
+```ruby
+"my dog-has-fleas".scan(/.\b/) => ["y", " ", "g", "-", "s", "-", "s"]
+```
+
+
+```ruby
+"my dog-has-fleas".scan(/g\b/) => ["g"]
+```
 
   ```ruby
   str = "Joshua"   # => "Joshua"
