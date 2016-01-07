@@ -59,7 +59,11 @@
 *              ```
 *
 * `\b`	Any word boundary
-* `(...)`	Capture everything enclosed
+* `(...)`	Capture an item in the string and then use `.` to represent any place your want around the string
+*                       str = "Joshua"   # => "Joshua"
+                        str[/(....a)/]   # => "oshua"
+                        str[/(J...u.)/]  # => "Joshua"
+                        str[/(.s..)/]    # => "oshu"
 * `(a|b)`	a or b
 * `a?`	Zero or one of a
 * `a*`	Zero or more of a
