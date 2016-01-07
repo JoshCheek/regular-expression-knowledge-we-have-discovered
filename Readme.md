@@ -2,14 +2,23 @@
 
 ## Methods
 * `=~`
-  Gives the index of the first match
+  Returns the index of the first match
 * `[]`
   return the first match
 * `gsub`
-  Takes a regex expression, and a second argument. Replaces all instances of the target (first argument) with the second argument.
+  FIND ME
 * `split`
-  Splits string based on the character argumert provided (a.split(/<character(s)>/).
+  Splits string based on the character argumert provided(defaults to a space)
   Removes the arg character(s) from the string, returns an array of strings
+
+  ```ruby
+  a = "Hello, its me!"
+  a.split           # =>  ["Hello,", "its", "me!"]
+  a.split(/i/)      # =>  ["Hello, ", "ts me!"]
+  a.split(/ll/)     # =>  ["He", "o, its me!"]
+  a.split(/z/)      # =>  ["Hello, its me!"]
+  ```
+  
 * `scan`
   Returns an array of matches
 
