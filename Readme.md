@@ -19,6 +19,12 @@
 * `/M+/` One or more of its target
 * `/M*/` Zero or more of its target
 * `/./` match any character
+* `/^M/` matches its target if target exists at the beginning of a line in a string
+
+  ```ruby
+  str = "Regexes are badass.\nI wonder if strings are jealous?\nRegexes are king."
+  str.scan(/^Regexes/) # => ["Regexes", "Regexes"]
+  ```
 
 ## Still unknown
 * `[abc]`	A single character of: a, b, or c
