@@ -18,6 +18,8 @@
 * `/M+/` One or more of its target
 * `/M*/` Zero or more of its target
 * `/./` match any character
+* `/^M/` matches its target if target exists at the beginning of a line in a string
+* 
 
 ## Still unknown
 * `[abc]`	A single character of: a, b, or c
