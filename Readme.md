@@ -5,10 +5,10 @@
   Gives the index of the first match
 * `[]`
   return the first match
-* `gsub`
-  FIND ME
+* `gsub` Takes a regex expression, and a second argument. Replaces all instances of the target (first argument) with the second argument.
 * `split`
-  FIND ME
+  Splits string based on the character argumert provided (a.split(/<character(s)>/).
+  Removes the arg character(s) from the string, returns an array of strings
 * `scan`
   Returns an array of matches
 
