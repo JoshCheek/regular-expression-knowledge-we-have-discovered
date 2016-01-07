@@ -27,7 +27,8 @@
 * `^`	Start of line
 * `$`	End of line
 * `\A`	Start of string
-* `\z`	End of string
+* `\z`	Matches targets (".." in example) starting from the end of the string and working backwards from there. 
+*     EXAMPLE: "Joshua Mejia [7:58 PM]"[(/..\z/]) => "M]" vs. "Joshua Mejia [7:58 PM]"[(/...\z/]) => "PM]"
 * `\s`	Any whitespace character
 * `\S`	Any non-whitespace character
 * `\d`	Any digit
