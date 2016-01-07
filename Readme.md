@@ -5,10 +5,10 @@
   Gives the index of the first match
 * `[]`
   return the first match
-* `gsub` Takes a regex expression, and a second argument. Replaces all instances of the target (first argument) with the second argument.
+* `gsub`
+  "Find and replace", takes two arguments of either strings or regex and replaces all occurences of the first arg with the second arg
 * `split`
-  Splits string based on the character argumert provided (a.split(/<character(s)>/).
-  Removes the arg character(s) from the string, returns an array of strings
+  Splits a string based on the regex, and returns an array of each side of the split as a separate entry in the array
 * `scan`
   Returns an array of matches
 
@@ -18,37 +18,22 @@
 * `/M+/` One or more of its target
 * `/M*/` Zero or more of its target
 * `/./` match any character
-* `/^M/` matches its target if target exists at the beginning of a line in a string
-
-  ```ruby
-  str = "Regexes are badass.\nI wonder if strings are jealous?\nRegexes are king."
-  str.scan(/^Regexes/) # => ["Regexes", "Regexes"]
-  ```
-* `/^M/` matches its target if target exists at the beginning of a line in a string
 
 ## Still unknown
 * `[abc]`	A single character of: a, b, or c
 * `[^abc]`	Any single character except: a, b, or c
 * `[a-z]`	Any single character in the range a-z
 * `[a-zA-Z]`	Any single character in the range a-z or A-Z
-* `^`	Start of line
-* `$`	End of line
+* `^`	Start of line: lets you find just a new line or a pattern at the beginning of a new line
+* `$`	End of line:  lets you find just a end of a line or a pattern at the end of a line
 * `\A`	Start of string
-* `\z`	Matches targets (".." in example) starting from the end of the string and working backwards from there.
-*     EXAMPLE: "Joshua Mejia [7:58 PM]"[(/..\z/]) => "M]" vs. "Joshua Mejia [7:58 PM]"[(/...\z/]) => "PM]"
+* `\z`	End of string
 * `\s`	Any whitespace character
 * `\S`	Any non-whitespace character
 * `\d`	Any digit
 * `\D`	Any non-digit
-* `\w`	Any word character (letter, number, underscore)
-* `\W`	Any non-word character: Finds spaces, commas, colons, etc - things that wouldn't be part of a word. This does find apostraphe's also, so look out for contractions!
-*     EXAMPLE: ```ruby
-*           "Joshua Mejia [7:58 PM]".scan(/\W/) => [" ", " ", "[", ":", " ", "]"]
-*           ```
-*           ```ruby
-*              "Joshua Mejia [7:58 PM]".scan(/.\W/) => ["a ", "a ", "7:", "8 ", "M]"]
-*              ```
-*
+* `\w`	Any word character (letter, number, underscore): `"WORD!".scan(\w) => ["WORD"]`
+* `\W`	Any non-word character: `"WORD!".scan(\W) => ["!"]`
 * `\b`	Any word boundary
 * `(...)`	Capture everything enclosed
 * `(a|b)`	a or b
@@ -56,12 +41,12 @@
 * `a*`	Zero or more of a
 * `a+`	One or more of a
 * `a{3}`	Exactly 3 of a
-* `a{3,}`	3 or more of a
-* `a{3,6}`	Between 3 and 6 of a
+* `a{3,}`	3 or more of a 
+* `a{3,6}`	Between 3 and 6 of a  ``"hellllo worllllld!".scan(l{3,6}) => ["llll", "lllll"]``  If there are more than the max, the regex grabs the maximum, leaving behind the remainder of the characters as such: `"777777777".scan(7{3-6}) => ["777777", "777"]`
 
 ## Open questions:
 
-* does case matter?
+* does case matter? YES! Use `i` after the method as such: `"hi HI".scan(/hi/i) => ["hi", "HI"]`
 * can we get rid of the plus in scan?
 
 
