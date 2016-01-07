@@ -47,8 +47,8 @@
 *     EXAMPLE: "Joshua Mejia [7:58 PM]"[(/..\z/]) => "M]" vs. "Joshua Mejia [7:58 PM]"[(/...\z/]) => "PM]"
 * `\s`	Any whitespace character
 * `\S`	Any non-whitespace character
-+* `\d`	Any digit ```str.scan(/\d/)``` found only the digits 0-9 in the string
- +* `\D`	Any non-digit ```str.scan(/\D/)``` found only the nondigits a-z in the string
+* `\d`	Any digit ```str.scan(/\d/)``` found only the digits 0-9 in the string
+* `\D`	Any non-digit ```str.scan(/\D/)``` found only the nondigits a-z in the string
 * `\w`	Any word character (letter, number, underscore)
 * `\W`	Any non-word character: Finds spaces, commas, colons, etc - things that wouldn't be part of a word. This does find apostraphe's also, so look out for contractions!
 *     EXAMPLE: ```ruby
