@@ -51,13 +51,14 @@
 * `\D`	Any non-digit ```str.scan(/\D/)``` found only the nondigits a-z in the string
 * `\w`	Any word character (letter, number, underscore)
 * `\W`	Any non-word character: Finds spaces, commas, colons, etc - things that wouldn't be part of a word. This does find apostraphe's also, so look out for contractions!
-*     EXAMPLE: ```ruby
-*           "Joshua Mejia [7:58 PM]".scan(/\W/) => [" ", " ", "[", ":", " ", "]"]
-*           ```
-*           ```ruby
-*              "Joshua Mejia [7:58 PM]".scan(/.\W/) => ["a ", "a ", "7:", "8 ", "M]"]
-*              ```
-*
+
+  ```ruby
+  "Joshua Mejia [7:58 PM]".scan(/\W/) => [" ", " ", "[", ":", " ", "]"]
+  ```
+
+  ```ruby
+  "Joshua Mejia [7:58 PM]".scan(/.\W/) => ["a ", "a ", "7:", "8 ", "M]"]
+  ```
 * `\b`	Any word boundary
 * `(...)`	Capture an item in the string and then use `.` to represent any place your want around the string
 *                       str = "Joshua"   # => "Joshua"
