@@ -38,7 +38,7 @@
 ## Still unknown
 * `[abc]`	A single character of: a, b, or c
 * `[^abc]`	Any single character except: a, b, or c
-* `[a-z]`	Any single character in the range a-z
+* `[a-z]`	all instances of lowercase letters; Brackets are required ``` "abc".scan(/[a-z]/) #=> ["a", "b", "c"] ```
 * `[a-zA-Z]`	Any single character in the range a-z or A-Z
 * `^`	Start of line
 * `$`	End of line
