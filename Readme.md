@@ -6,7 +6,7 @@
 * `[]` return the first match
 * `gsub` Takes a regex expression, and a second argument. Replaces all instances of the target (first argument) with the second argument.
 * `split`
-  Splits string based on the character argumert provided(defaults to a space)
+  Splits string based on the character argumert provided (`a.split(/<character(s)>/`).
   Removes the arg character(s) from the string, returns an array of strings
 
   ```ruby
