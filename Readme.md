@@ -38,17 +38,17 @@
 ## Still unknown
 * `[abc]`	A single character of: a, b, or c
 * `[^abc]`	Any single character except: a, b, or c
-* `[a-z]`	all instances of lowercase letters; Brackets are required ``` "abc".scan(/[a-z]/) #=> ["a", "b", "c"] ```
+* `[a-z]`	Any single character in the range a-z
 * `[a-zA-Z]`	Any single character in the range a-z or A-Z
 * `^`	Start of line
 * `$`	End of line
 * `\A`	Start of string
 * `\z`	Matches targets (".." in example) starting from the end of the string and working backwards from there.
 *     EXAMPLE: "Joshua Mejia [7:58 PM]"[(/..\z/]) => "M]" vs. "Joshua Mejia [7:58 PM]"[(/...\z/]) => "PM]"
-* `\s`	Any whitespace character
+* `\s`	Any whitespace character If using scan, will identify the character before or after.  For example, string = "whatup yo". If you enter this: string.scan(/p\s/), you will get ["p "]
 * `\S`	Any non-whitespace character
-* `\d`	Any digit ```str.scan(/\d/)``` found only the digits 0-9 in the string
-* `\D`	Any non-digit ```str.scan(/\D/)``` found only the nondigits a-z in the string
++* `\d`	Any digit ```str.scan(/\d/)``` found only the digits 0-9 in the string
+ +* `\D`	Any non-digit ```str.scan(/\D/)``` found only the nondigits a-z in the string
 * `\w`	Any word character (letter, number, underscore)
 * `\W`	Any non-word character: Finds spaces, commas, colons, etc - things that wouldn't be part of a word. This does find apostraphe's also, so look out for contractions!
 *     EXAMPLE: ```ruby
@@ -59,11 +59,7 @@
 *              ```
 *
 * `\b`	Any word boundary
-* `(...)`	Capture an item in the string and then use `.` to represent any place your want around the string
-*                       str = "Joshua"   # => "Joshua"
-                        str[/(....a)/]   # => "oshua"
-                        str[/(J...u.)/]  # => "Joshua"
-                        str[/(.s..)/]    # => "oshu"
+* `(...)`	Capture everything enclosed
 * `(a|b)`	a or b
 * `a?`	Zero or one of a
 * `a*`	Zero or more of a
