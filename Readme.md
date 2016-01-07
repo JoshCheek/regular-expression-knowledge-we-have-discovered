@@ -2,11 +2,11 @@
 
 ## Methods
 * `=~`
-  Returns the index of the first match
+  Gives the index of the first match
 * `[]`
   return the first match
 * `gsub`
-  FIND ME
+  Takes a regex expression, and a second argument. Replaces all instances of the target (first argument) with the second argument.
 * `split`
   FIND ME
 * `scan`
