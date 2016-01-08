@@ -49,7 +49,6 @@
   str = "Regexes are badass.\nI wonder if strings are jealous?\nRegexes are king."
   str.scan(/^Regexes/) # => ["Regexes", "Regexes"]
   ```
-* `/^M/` matches its target if target exists at the beginning of a line in a string
 * `a{3,}`	3 or more of 'a' so in 'haaapppy go lucky bunny rabbit' this will select 'aaa', but in 'haaaapppy go lucky bunny rabbit' you will get 'aaaa'. you can change this number to select whatever you want, however if you use 1 as in => a{1,} this will select every combination of 'a' so 'happpy go lucky bunny raaaabbit1' => 'a','aaaa'
 * `\z`	Matches targets (".." in example) starting from the end of the string and working backwards from there.
 
@@ -96,6 +95,19 @@
   ```ruby
   "777777777".scan(7{3-6}) => ["777777", "777"]
   ```
+* The positive lookahead is designated by regex_to_match(?=regex_after). It returns a match when regex_to_match is followed by regex_after. The match does not return the regex searched for within the parentheses. For example:
+
+```ruby
+"aXbXcXdY".scan(/.(?=X)/) #=> ["a", "b", "c"]
+"aX bY c#4".scan(/.(?=\w)/) #=> ["a", "b"]
+```
+* The negative lookahead is designated by regex_to_match(?!regex_after). It returns a match when regex_to_match is **not** followed by regex_after. Similar to the positive lookahead, the match does not return the regex searched for within the parentheses.
+
+```ruby
+"aXbXcXdY".scan(/[a-d](?!X)/) #=> ["d"]
+"aX bY c#4d5".scan(/[a-c](?!\w)/) #=> ["c"]
+```
+
 
 ## Still unknown
 
